@@ -6,8 +6,9 @@ listCategory.forEach(function (el) {
     let listItem = el.querySelectorAll('li');;
     console.log("Elements: ", listItem.length)
 });
+console.log("");
 console.log("________________________________________________________________")
-
+console.log("");
 
 const liItem = document.querySelectorAll("#categories > li.item")
 console.log("Number of categories: ", liItem.length);

@@ -18,7 +18,7 @@ const listEl = document.querySelector(".gallery");
 
 const elements = images.map(({ url, alt }) => {
   const liEl = document.createElement("li");
-    const  imgEl = document.createElement("img");
+  const  imgEl = document.createElement("img");
   liEl.appendChild(imgEl);
   imgEl.src = url;
   imgEl.alt = alt;
@@ -26,4 +26,17 @@ const elements = images.map(({ url, alt }) => {
   return liEl;
 }
 );
- listEl.append(...elements);
+listEl.append(...elements);
+ 
+/*---------------*/
+
+const listEl2 = document.querySelector(".gallery");
+const elements2 = images.map(({ url, alt }) =>
+  `<li><img src="${url}" alt="${alt}"</li>`
+).join("");
+listEl2.insertAdjacentHTML("beforeend", elements2);
+
+listEl2.style.display = "flex";
+listEl2.style.gap = "60px";
+listEl2.style.listStyle = "none";
+listEl2.style.flexWrap = 'wrap';

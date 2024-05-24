@@ -18,11 +18,12 @@ const listEl = document.querySelector(".gallery");
 
 const elements = images.map(({ url, alt }) => {
   const liEl = document.createElement("li");
-  const  imgEl = document.createElement("img");
+    const  imgEl = document.createElement("img");
+  liEl.appendChild(imgEl);
   imgEl.src = url;
   imgEl.alt = alt;
   liEl.classList.add("item");
-  return imgEl;
+  return liEl;
 }
 );
  listEl.append(...elements);

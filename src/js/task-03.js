@@ -40,3 +40,22 @@ listEl2.style.display = "flex";
 listEl2.style.gap = "60px";
 listEl2.style.listStyle = "none";
 listEl2.style.flexWrap = 'wrap';
+
+
+/*---------------*/
+
+const listEl3 = document.querySelector(".gallery");
+
+const makeImgList = img => {
+  return img.map(({ url, alt }) => {
+    const liEl = document.createElement("li");
+    const imgEl = document.createElement("img");
+    liEl.appendChild(imgEl);
+    imgEl.src = url;
+    imgEl.alt = alt;
+    liEl.classList.add("item");
+    return liEl;
+  });
+};
+const elems = makeImgList(images);
+listEl3.append(...elems);
